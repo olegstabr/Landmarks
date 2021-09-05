@@ -14,8 +14,8 @@ struct ContentView: View {
 				.ignoresSafeArea(edges: .top)
 				.frame(height: DrawingConstants.mapViewHeight)
 			CircleImage()
-				.offset(y: -130)
-				.padding(.bottom, -130)
+				.offset(y: DrawingConstants.imageOffsetY)
+				.padding(.bottom, DrawingConstants.imageBottomPadding)
 			VStack(alignment: .leading) {
 				Text("Turtle Rock")
 					.font(.title)
@@ -28,7 +28,7 @@ struct ContentView: View {
 				.foregroundColor(.secondary)
 				Divider()
 				Text("About Turtle Rock")
-									.font(.title2)
+					.font(.title2)
 				Text("Descriptive text goes here.")
 			}
 			.padding()
@@ -45,4 +45,6 @@ struct ContentView_Previews: PreviewProvider {
 
 private struct DrawingConstants {
 	static let mapViewHeight:CGFloat = 300
+	static let imageOffsetY: CGFloat = -130
+	static let imageBottomPadding: CGFloat = -130
 }
